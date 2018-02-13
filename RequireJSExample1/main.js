@@ -21,6 +21,9 @@ require(['jquery', 'a'], function($){
             J.lg('\n\nb loaded');
             J.lg('window.b is ' + window.b);
             J.show();
-        })
-    })
-})
+        });
+    });
+});
+
+J.lg('\n\nmain.js finish excution');
+J.show();

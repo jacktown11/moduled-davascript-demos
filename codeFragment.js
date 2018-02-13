@@ -57,3 +57,12 @@ var module1 = (function(mod){
 var module1 = (function($, YAHOO){
     //...
 })(jQuery, YAHOO);
+
+var math = require('math');
+math.add(2,3);
+
+require([module], callback);
+
+require(['math'], function(math){
+    math.add(2,3);
+});
