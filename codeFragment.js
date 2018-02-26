@@ -66,3 +66,40 @@ require([module], callback);
 require(['math'], function(math){
     math.add(2,3);
 });
+
+define(id?, dependencies?, factory);
+
+define('alpha', ['require', 'exports', 'beta'], function (require, exports, beta) {
+    exports.verb = function () {
+        return beta.verb();
+    }
+}); 
+define('alpha', ['require', 'exports'], function (require, exports) {
+    exports.verb = function () {
+        return require('beta').verb();
+    }
+});
+
+define(factory)
+
+define(function(require, exports, module){
+    // 这里是模块定义的具体代码
+})
+
+;(function(root, factory){
+    if(typeof module === 'object' && 
+        module && module.exports){
+            // CommonJS规范
+            module.exports = factory(/* require deps */);
+    }else if(typeof define === 'function' &&
+        define.amd){
+            // AMD规范
+            define([/* require deps */], factory);
+    }else{
+        // 没有模块系统的纯浏览器环境
+        root.yourModuleIdentifier = factory(/* require deps */);    
+    }
+})(this, function (/* require deps */){
+    var obj = {};
+    return obj;
+});
